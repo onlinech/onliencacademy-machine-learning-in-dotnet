@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CLEAN MARKUP = GOOD KARMA.
+      Hi source code lover,
+
+      you're a curious person and a fast learner ;)
+      Let's make something beautiful together. Contribute on Github:
+      https://github.com/webslides/webslides
+
+      Thanks,
+      @jlantunez.
+    -->
+
+    <!-- SEO -->
+    <title>Machine Learning in .NET</title>
+    <meta name="description" content="Machine Learning w .NET - Maciej Jędrzejewski">
+
+    <!-- URL CANONICAL -->
+    <!-- <link rel="canonical" href="http://your-url.com/"> -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <!-- CSS WebSlides -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/webslides.css">
+
+    <!-- Optional - CSS SVG Icons (Font Awesome) -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/svg-icons.css">
+
+    <!-- SOCIAL CARDS (ADD YOUR INFO) -->
+
+    <!-- FACEBOOK -->
+    <meta property="og:url" content="http://your-url.com/"> <!-- YOUR URL -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="WebSlides — Making HTML Presentations Easy"> <!-- EDIT -->
+    <meta property="og:description" content="WebSlides is about telling stories beautifully. Just the essential features. Good karma."> <!-- EDIT -->
+    <meta property="og:updated_time" content="2017-01-04T17:20:50"> <!-- EDIT -->
+    <meta property="og:image" content="static/images/share-webslides.jpg"> <!-- EDIT -->
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@webslides"> <!-- EDIT -->
+    <meta name="twitter:creator" content="@jlantunez"> <!-- EDIT -->
+    <meta name="twitter:title" content="WebSlides — Making HTML Presentations Easy"> <!-- EDIT -->
+    <meta name="twitter:description" content="WebSlides is about good karma. Just essential features. 120+ free slides ready to use."> <!-- EDIT -->
+    <meta name="twitter:image" content="static/images/share-webslides.jpg"> <!-- EDIT -->
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" sizes="16x16" href="static/images/favicons/favicon.png">
+    <link rel="shortcut icon" sizes="32x32" href="static/images/favicons/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="static/images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="static/images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="static/images/favicons/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="static/images/favicons/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="static/images/favicons/favicon-192.png">
+
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
+
+  </head>
+  <body>
+    <main role="main">
+      <article id="webslides" class="vertical">
+        <!-- Quick Guide
+          - Each parent <section> in the <article id="webslides"> element is an individual slide.
+          - Vertical sliding = <article id="webslides" class="vertical">
+          - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+
+        <section>
+         <span class="background" style="background-image:url('static/images/robot.jpg')"></span>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap aligncenter">
+            <h1><strong>Machine Learning in .NET</strong></h1>
+            <p class="text-intro">
+              Maciej Jędrzejewski
+            </p>           
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <!-- <section>
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">      
+                <figure>
+                    <img src="static/images/profile.jpg">
+                  </figure>
+              </div>
+              <div class="column">
+                <h3><strong>Szybko o mnie</strong></h3>
+                <p class="text-intro">Programista, prelegent i bloger</p>
+                <p>Zainteresowania od Angulara, poprzez .NET, aż do machine learning. W wolnych chwilach piszę swój pierwszy kryminał i oglądam <strong>nałogowo polską ekstraklasę kopaną.</strong></p>
+
+                <p>Jeżeli chcesz się ze mną skontaktować, zapraszam na jeden z kanałów:</p>
+                <p>
+                  <a target="_blank">
+                    <svg class="fa-twitter">
+                      <use xlink:href="#fa-twitter"></use>
+                    </svg>
+                    @mjjedmac
+                  </a>
+                </p>
+                <p>
+                  <a target="_blank">
+                    <svg class="fa-facebook">
+                      <use xlink:href="#fa-facebook"></use>
+                    </svg>
+                    @maciejjedrzejewskiblog
+                  </a>
+                </p>
+                <p>
+                  <a target="_blank">
+                    <svg class="fa-bookmark">
+                      <use xlink:href="#fa-bookmark"></use>
+                    </svg>
+                    maciejjedrzejewski.pl
+                  </a>
+                </p>           
+              </div>
+            </div>
+          </div>
+        </section> -->
+        <section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap size-50 aligncenter">
+            <h2><strong>Agenda</strong></h2>
+            <p class="text-intro">A lot of knowledge.</p>
+            <div class="bg-white shadow">
+              <ul class="flexblock reasons">
+                <li>
+                  <h2>Machine learning in simple words</h2>
+                  <p>Why to use it? Should I always use it? What benefits can it bring to my application? Data analysis?!</p>
+                </li>             
+                <li>
+                  <h2>How does the application development process looks like?</h2>
+                  <p>I know machine learning - let's start coding! Is it a good way to go?</p>
+                </li>
+				 <li>
+                  <h2>ML.NET - overview</h2>
+                  <p>Why ML.NET? What about Python and R?</p>
+                </li>
+                <li>
+                  <h2>ML.NET - algorithms</h2>
+                  <p>Algorithm typologies in ML.NET</p>
+                </li>
+                <li>
+                  <h2>ML.NET - hands on</h2>
+                  <p>From zero to hero - we will create an app for car profitability decisions</p>
+                </li>
+              </ul>
+            </div>
+            <!-- .end .bg-white shadow -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section class="aligncenter">
+          <!-- .wrap = container (width: 90%) -->
+          <div class="wrap">
+            <img src="static/images/arthursamuel.JPG">
+            <h2><i>"Field of study that gives computers the ability to learn without being explicitly programmed."</i> - Arthur Samuel (1959)</h2>             
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>Machine learning is not simple.</strong></h3>
+                <p class="text-intro">The most important are mathematic models and algorithms.</p>
+                <p>In case of wrong selection of algorithm or incorrect model of reality - our system will be <strong>in the best scenario inefficient.</strong>.</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>&lt;div id="machineLearning"&gt;
+  <span class="code-comment">&lt;!-- Here we do the magic --&gt;</span>
+  &lt;section&gt;
+    &lt;h1&gt;Magic!&lt;/h1&gt;
+  &lt;/section&gt;
+&lt;/div&gt;
+</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>        
+           <!--.wrap = container (width: 90%) -->
+           <div class="wrap aligncenter">
+             <h1><strong>Machine learning is a subset of AI. Deep learning is a subset of machine learning.</strong></h1>
+             <p class="text-intro">
+               These keywords are not exchangeable. 
+             </p>           
+           </div>
+           <!-- .end .wrap -->
+         </section>
+        <section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">      
+                <figure>
+                    <img src="static/images/cancer.jpg">
+                  </figure>
+              </div>
+              <div class="column">
+                <h3><strong>Machine learning is a revolution.</strong></h3>
+                <p class="text-intro">We are at the beginning in commercial usage but it already brings results.</p>
+                <p>A lot of applications - from financial predictions, through users support, till <strong>cancer stadium classifications.</strong> 
+                  Every branch can be affected.</p>
+
+                  <p>Please try to find such areas in your application. Suggestions, forecasts, image recognition - these are only few examples which can bring it to the next level.</p>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>      
+        <section>
+          <div class="wrap">
+            <h2><strong>Examples from popular services</strong></h2>
+            <ul class="flexblock gallery">
+              <li>
+                <figure>
+                  <img src="static/images/netflix.JPG">
+                  <figcaption>
+                    <h2>Netflix</h2>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="static/images/facebook.JPG">
+                  <figcaption>
+                    <h2>Facebook</h2>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="static/images/twitter.JPG">
+                  <figcaption>
+                    <h2>Twitter</h2>
+                  </figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">               
+              <div class="column">
+                <h3><strong>Machine learning is a potential problem.</strong></h3>
+                <p class="text-intro">Most of us is able to solve the simple problem.</p>
+                <p>Unfortunately, day by day we face complex scenarios. Very important thing is to delegate responsibilities to correct professionals.</p> 
+                <p>Many data scientists are willing <strong>to program what they modelled.</strong> They are lacking knowledge and experience in programming.</p>
+                <p>Many programmists are willing <strong>to model what they will program.</strong> They are lacking mathematics knowledge and experience in modelling.</p>
+              </div>
+              <div class="column">      
+                <figure>
+                    <img src="static/images/business.jpg">
+                  </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <div class="wrap">
+            <h2>How does the development process look like?</h2>
+            <ul class="flexblock features">
+              <li>
+                <div>
+                  <h2>
+                    <svg class="fa-book">
+                      <use xlink:href="#fa-book"></use>
+                    </svg>
+                    Analysis
+                  </h2>
+                  Do the analysis of the chosen reality. Define how will input attributes look like and what do we expect as the output
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h2>
+                    <svg class="fa-link">
+                      <use xlink:href="#fa-link"></use>
+                    </svg>
+                    Mathematic model
+                  </h2>
+                  The most important part. Based on it we will select the algorithm in next steps
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h2>
+                    <svg class="fa-database">
+                      <use xlink:href="#fa-database"></use>
+                    </svg>
+                    Training data
+                  </h2>
+                  In our case we will put there input attributes and the output
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h2>
+                    <svg class="fa-circle-o-notch">
+                      <use xlink:href="#fa-circle-o-notch"></use>
+                    </svg>
+                    Learning pipeline
+                  </h2>
+                  Create a pipeline, and then train it with the prepared data
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h2>
+                    <svg class="fa-calculator">
+                      <use xlink:href="#fa-calculator"></use>
+                    </svg>
+                    Alghoritm
+                  </h2>
+                  Take the best fitting algorithm to the scenario (modelled reality)
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h2>
+                    <svg class="fa-clock-o">
+                      <use xlink:href="#fa-clock-o"></use>
+                    </svg>
+                    Result
+                  </h2>
+                  Start the model and wait for a result
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+		<section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">               
+              <div class="column">
+                <h3><strong>ML.NET - Microsoft way to handle machine learning</strong></h3>
+                <p class="text-intro">We are .NETters. It is more comfortable for us to start in .NET than in other languages.</p>
+				<ul class="description">
+					<li>This is an alternative to existing Python or R solutions.</li> 
+					<li>It is in preview phase. </li>
+					<li>You can use it in production but there might be breaking changes.</li>
+					<li>Microsoft puts a lot of effort on this <strong>but it is a third topic from the top.</strong></li>
+				</ul>
+              </div>
+              <div class="column">      
+                <figure>
+                    <img src="static/images/microsoft.png">
+                  </figure>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap size-50 aligncenter">
+            <h2><strong>Algorithms division in ML.NET</strong></h2>
+            <p class="text-intro">It will be easy - they said.</p>
+            <div class="bg-white shadow">
+              <ul class="flexblock reasons">
+                <li>
+                  <h2>Regression</h2>
+                  <p><strong>When?</strong> In case we would like to predict the market values or taxi fare.</p>
+                </li>
+                <li>
+                  <h2>Anomaly detection</h2>
+                  <p><strong>When?</strong> In case we would like to detect the fraud in the banking system.</p>
+                </li>
+                <li>
+                  <h2>Two-classes classification</h2>
+                  <p><strong>When?</strong> In case we would like to receive positive/negative answer. Yes/no. Acceptable/Unacceptable. Good/bad.</p>
+                </li>
+                <li>
+                  <h2>Multi-classes classification</h2>
+                  <p><strong>When?</strong> In case we would like to receive one of many answers (> 2). Best/Good/Bad/Worst.</p>
+                </li>             
+              </ul>
+            </div>
+            <!-- .end .bg-white shadow -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <div class="wrap">
+            <h2>Why not use a standard algorithm? Study case of our demo - car acceptability.</h2>
+            <div class="grid vertical-align">    
+              <div class="column">
+                  <h4>Values (output):</h4>
+                  <p><strong>Acceptability:</strong> unacc, acc, good, vgood</p>
+
+                  <h4>Attributes (input):</h4>      
+                  <p><strong>buying price:</strong> vhigh, high, med, low.</p>
+                  <p><strong>maintenance price:</strong> vhigh, high, med, low. </p>
+                  <p><strong>number of doors:</strong> 2, 3, 4, 5more. </p>
+                  <p><strong>number of people:</strong> 2, 4, more. </p>
+                  <p><strong>luggage size:</strong> small, med, big. </p>
+                  <p><strong>safety level:</strong> low, med, high. </p>
+              </div>    
+              <div class="column">
+                <h4>
+                  <svg class="fa-cubes">
+                    <use xlink:href="#fa-cubes"></use>
+                  </svg>
+                  <strong>Standard algorithm</strong>
+                </h4>
+                <p>All combinations needed to give a correct prediction: <strong>6912</strong></p>
+                <ul class="description">
+                  <li>We need to define all combinations to have a correct result.</li>
+                  <li>Will it be accurate afterwards?</li> 
+                  <li>If we do not define all combinations, then think about a programming hell.</li>
+                  <li>Is it still a standard algorithm or do you start machine learning?</li>
+                </ul>
+              </div>
+              <!-- <div class="column">
+                <figure><img class="aligncenter" src="static/images/setup.png" alt="WebSlides Files"></figure>
+              </div> -->
+              <div class="column">
+                <h4>
+                  <svg class="fa-eye">
+                    <use xlink:href="#fa-eye"></use>
+                  </svg>
+                  <strong>Machine learning algorithm</strong>
+                </h4>
+                <p>All combinations needed to give a correct prediction: <strong>1728</strong></p>
+                <ul class="description">
+                  <li>We need to define as many combinations as it is defined by mathematic model.</li>
+                  <li>If the training data is incorrect, then your model will be wrongly trained.</li>
+                  <li>If there is too much training data, then you just lose resources.</li>
+                  <li>You train a model and voila!</li>
+                </ul>
+              </div>
+            </div>
+            <!--end .grid -->
+          </div>
+        </section>
+        <section class="aligncenter">
+          <!-- .wrap = container (width: 90%) -->
+          <div class="wrap">
+            <h2><strong>Ready for a <a href="https://archive.ics.uci.edu/ml/index.php" target="_blank">demo</a>?</strong> </h2>
+            <p class="text-intro"><i>"Karma of humans is AI."</i> - Raghu Venkatesh</p>
+          </div>
+          <!-- .end .wrap -->
+        </section>        
+        <section class="aligncenter">
+            <!-- .wrap = container (width: 90%) -->
+            <div class="wrap">
+              <h2><strong>Questions?</strong> </h2>             
+            </div>
+            <!-- .end .wrap -->
+          </section>
+        <section class="slide-bottom">
+          <div class="wrap">
+            <div class="content-right text-serif">
+              <h2>
+                <strong>Thanks for your attention!</strong>
+              </h2>
+              <!-- <p>Jeżeli będziesz miał do mnie pytania po prezentacji - zapraszam do kontaktu</p>             
+              <p>
+                <a target="_blank">
+                  <svg class="fa-twitter">
+                    <use xlink:href="#fa-twitter"></use>
+                  </svg>
+                  @mjjedmac
+                </a>
+                <a target="_blank">
+                  <svg class="fa-facebook">
+                    <use xlink:href="#fa-facebook"></use>
+                  </svg>
+                  @maciejjedrzejewskiblog
+                </a>
+                <a target="_blank">
+                  <svg class="fa-bookmark">
+                    <use xlink:href="#fa-bookmark"></use>
+                  </svg>
+                  maciejjedrzejewski.pl
+                </a>
+              </p>            -->
+            </div>
+            <!-- .end .content-right -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+      </article>
+      <!-- end article -->
+    </main>
+    <!-- end main -->
+
+   <!-- A global footer
+
+     <footer role="contentinfo">
+      <div class="wrap">
+        <p>An <a href="https://github.com/webslides/webslides">open source solution</a>, by <a href="https://twitter.com/webslides">@webslides</a>.</p>
+      </div>
+    </footer>  -->
+
+    <!-- Required -->
+    <script src="static/js/webslides.js"></script>
+    <script>
+      window.ws = new WebSlides();
+    </script>
+
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+    <script defer src="static/js/svg-icons.js"></script>
+
+  </body>
+</html>
