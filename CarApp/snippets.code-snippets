@@ -1,0 +1,107 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+
+	"Create a learning pipeline": {
+		"scope": "csharp",
+		"prefix": "createPipeline",
+		"body": [
+			"var pipeline = new LearningPipeline();"
+		]
+	},
+	"Prepare a training data": {
+		"scope":"csharp",
+		"prefix": "prepareTrainingDataForPipeline",
+		"body": [
+			"// Then we have to load the prepared data",
+            "var trainingDataPath = @\".\\cars.txt\";",
+			"pipeline.Add(new TextLoader(trainingDataPath).CreateFrom<CarsTrainingDataModel>(separator: ','));\n",
+            "// In our case we need to vectorize our parameters as these are strings. We can only put numbers - integers, doubles, floats etc. or vectors to our pipeline",
+            "pipeline.Add(new CategoricalOneHotVectorizer(nameof(CarsTrainingDataModel.BuyingPriceLevel)));",
+            "pipeline.Add(new CategoricalOneHotVectorizer(nameof(CarsTrainingDataModel.MaintenancePriceLevel)));",
+            "pipeline.Add(new CategoricalOneHotVectorizer(nameof(CarsTrainingDataModel.NumberOfDoor)));",
+            "pipeline.Add(new CategoricalOneHotVectorizer(nameof(CarsTrainingDataModel.NumberOfPeople)));",
+            "pipeline.Add(new CategoricalOneHotVectorizer(nameof(CarsTrainingDataModel.LuggageSize)));",
+            "pipeline.Add(new CategoricalOneHotVectorizer(nameof(CarsTrainingDataModel.SafetyLevel)));",
+            "pipeline.Add(new Dictionarizer(nameof(CarsTrainingDataModel.Label)));\n",
+            "// Next we put all of our vectorized features to a vector",
+            "pipeline.Add(new ColumnConcatenator(",
+                "\"Features\",",
+                "nameof(CarsTrainingDataModel.BuyingPriceLevel), ",
+                "nameof(CarsTrainingDataModel.MaintenancePriceLevel),",
+                "nameof(CarsTrainingDataModel.NumberOfDoor),",
+                "nameof(CarsTrainingDataModel.NumberOfPeople),",
+                "nameof(CarsTrainingDataModel.LuggageSize),",
+                "nameof(CarsTrainingDataModel.SafetyLevel)));"
+		]
+	},
+	"Select algorithm": {
+		"scope": "csharp",
+		"prefix": "selectAlgorithmForPipeline",
+		"body": [
+			"// As the main step we add learning classifier - here we decide which algorithm we should use for concrete problem (mathematics! :))",
+            "//new StochasticDualCoordinateAscentClassifier",
+            "pipeline.Add(new NaiveBayesClassifier());"
+		]
+	},
+	"Convert a label from vector back to original text": {
+		"scope": "csharp",
+		"prefix": "convertLabelFromVectorBackToOriginalText",
+		"body": [
+			"// Convert the Label back into original text (after converting to number)",
+            "pipeline.Add(new PredictedLabelColumnOriginalValueConverter() { PredictedLabelColumn = nameof(AcceptabilityPrediction.PredictedLabel) });"
+		]
+	},
+	"Train a model for a pipeline": {
+		"scope": "csharp",
+		"prefix": "trainModelForPipeline",
+		"body": [
+			"// At this point we create and train our model based on the training data",
+            "var model = pipeline.Train<CarsTrainingDataModel, AcceptabilityPrediction>();"
+		]
+	},
+	"Prepare the input model": {
+		"scope": "csharp",
+		"prefix": "prepareInputModel",
+		"body": [
+			"// Here we use our model to predict the output based on input attributes",
+            "var prediction = model.Predict(new CarsTrainingDataModel",
+            "{",
+                "// buying       v-high, high, med, low",
+                "// maint        v-high, high, med, low",
+                "// doors        2, 3, 4, 5-more",
+                "// persons      2, 4, more",
+                "// lug_boot     small, med, big",
+                "// safety       low, med, high",
+                "BuyingPriceLevel = \"low\",",
+                "MaintenancePriceLevel = \"low\",",
+                "NumberOfDoor = \"5\",",
+                "NumberOfPeople = \"5\",",
+                "LuggageSize = \"big\",",
+                "SafetyLevel = \"high\"",
+            "});"
+		]
+	},
+	"Write prediction": {
+		"scope": "csharp",
+		"prefix": "writePrediction",
+		"body": [
+			"Console.WriteLine($\"Predicted acceptability is: {prediction.PredictedLabel}\");"
+		]
+	}
+}
